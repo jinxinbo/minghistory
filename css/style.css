@@ -479,6 +479,178 @@ a:hover {
   color: #fff;
 }
 
+/* ===== Footnote / Reference Citations ===== */
+sup.ref {
+  color: var(--red);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+sup.ref:hover {
+  color: var(--gold-dark);
+}
+
+.refs-list {
+  margin-top: 40px;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border-left: 4px solid var(--gold);
+}
+.refs-list h3 {
+  color: var(--red);
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.refs-list ol {
+  padding-left: 24px;
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 2;
+}
+.refs-list ol li::marker {
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ===== Search ===== */
+.search-box {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  position: relative;
+}
+.search-box input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid var(--gold);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-family: inherit;
+  background: #fff;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.3s;
+}
+.search-box input:focus {
+  border-color: var(--red);
+}
+.search-box input::placeholder {
+  color: #bbb;
+}
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #e0d8c8;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  z-index: 50;
+}
+.search-results.visible {
+  display: block;
+}
+.search-results a {
+  display: block;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0e8d8;
+  color: var(--text-dark);
+  transition: background 0.2s;
+}
+.search-results a:last-child {
+  border-bottom: none;
+}
+.search-results a:hover {
+  background: #f5f0e8;
+}
+.search-results a .result-title {
+  font-weight: 700;
+  color: var(--red);
+  font-size: 0.95rem;
+}
+.search-results a .result-desc {
+  font-size: 0.82rem;
+  color: #888;
+  margin-top: 2px;
+}
+.search-results .no-result {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 0.9rem;
+}
+
+/* ===== Last Updated ===== */
+.last-updated {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.78rem;
+  margin-top: -20px;
+  margin-bottom: 40px;
+  letter-spacing: 1px;
+}
+
+/* ===== Info Box ===== */
+.info-box {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin: 24px 0;
+  border-left: 4px solid var(--gold);
+}
+.info-box h3 {
+  color: var(--red);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+.info-box p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.8;
+}
+
+/* ===== Related Links ===== */
+.related-links {
+  margin: 32px 0;
+  padding: 20px 24px;
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.related-links h3 {
+  color: var(--red);
+  font-size: 1rem;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.related-links ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.related-links ul li a {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--bg-cream);
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  transition: all 0.2s;
+}
+.related-links ul li a:hover {
+  background: var(--red);
+  color: #fff;
+}
+
 /* ===== Footer ===== */
 .site-footer {
   background: var(--bg-dark);
