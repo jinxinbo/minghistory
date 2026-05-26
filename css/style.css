@@ -811,6 +811,15 @@ sup.ref:hover {
   opacity: 0.8;
   letter-spacing: 1px;
 }
+/* ===== Ink-wash SVG Portraits ===== */
+.figure-card .avatar {
+  position: relative;
+}
+.figure-card .avatar svg {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
