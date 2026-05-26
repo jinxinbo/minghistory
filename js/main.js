@@ -61,8 +61,14 @@
   const searchInput = document.getElementById('search-input')
   const resultsContainer = document.getElementById('search-results')
   if (searchInput && resultsContainer) {
+    // Detect if we're at root (index.html) or in pages/ subdirectory
+    const inPages = window.location.pathname.includes('/pages/')
+    function urlFor(path) {
+      if (inPages) return path.startsWith('../') ? path.slice(3) : path
+      return path.startsWith('../') ? path : 'pages/' + path
+    }
     const searchIndex = [
-      { title: '首页', url: '../index.html', desc: '大明风华 · 明朝历史知识库首页' },
+      { title: '首页', url: 'index.html', desc: '大明风华 · 明朝历史知识库首页' },
       { title: '明朝皇帝', url: 'emperors.html', desc: '十六位皇帝生平与年号' },
       { title: '大事记', url: 'events.html', desc: '明朝重大历史事件时间线' },
       { title: '文化科技', url: 'culture.html', desc: '文学、科技、建筑、思想等文化成就' },
@@ -140,7 +146,7 @@
       } else {
         matches.slice(0, 12).forEach(function (item) {
           const a = document.createElement('a')
-          a.href = item.url
+          a.href = urlFor(item.url)
           a.innerHTML = '<div class="result-title">' + item.title + '</div><div class="result-desc">' + item.desc + '</div>'
           resultsContainer.appendChild(a)
         })
